@@ -13,13 +13,31 @@ public class Main {
 		
 		while (true) {
 			System.out.println("enter 1 - add movie");
-			System.out.println("enter 2 - exit");
+			System.out.println("enter 2 - Show Schedule");
+			System.out.println("enter 3 - movie detail");
+			System.out.println("enter 4 - remove movie");
+			System.out.println("enter 5 - exit");
 			int choise = scanner.nextInt();
 			switch (choise) {
 			case 1:{
 				cinema.addMovie();
+				break;
 			}
 			case 2:{
+				System.out.println(cinema);
+				break;
+			}
+			
+			case 3:{
+				cinema.detail();
+				break;
+			}
+			
+			case 4:{
+				cinema.removeMovie();
+			}
+			
+			case 5:{
 				System.exit(0);
 			}
 				

@@ -9,6 +9,7 @@ public class Cinema {
 	private Time close;
 	
 	Map<Days, Schedule> map = new TreeMap<>();
+	Schedule schedule = new Schedule();
 	
 	public Cinema(Time open, Time close) {
 		super();
@@ -38,21 +39,29 @@ public class Cinema {
 		for (Days day: Days.values()) {
 			if(myDay.equalsIgnoreCase(day.name())){
 
-				Schedule schedule = new Schedule();
+				
 				schedule.addSeance();
 				
 				map.put(day, schedule);
 			}
 			
 		}
-		Set<Entry<Days, Schedule>> setMap = map.entrySet();	
-		for (Entry<Days, Schedule> entry : setMap) {
-			System.out.println(entry.getKey());
-			System.out.println(entry.getValue());
-		}
-		System.out.println();
-		System.out.println();
+//		Set<Entry<Days, Schedule>> setMap = map.entrySet();	
+//		for (Entry<Days, Schedule> entry : setMap) {
+//			System.out.println(entry.getKey());
+//			System.out.println(entry.getValue());
+//		}
+//		System.out.println();
+//		System.out.println();
 	
+	}
+	
+	public void removeMovie(){
+		schedule.removeSeance();
+	}
+	
+	public void detail(){
+		schedule.filmDetail();
 	}
 	
 
